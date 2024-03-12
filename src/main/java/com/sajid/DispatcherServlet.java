@@ -1,9 +1,11 @@
 package com.sajid;
 
 
+import com.sajid.config.DispatcherServletConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MyClass extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
