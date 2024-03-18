@@ -4,12 +4,9 @@ package com.sajid.entity;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-@Component
+
 @AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 public class Product {
     private int id;
     private String name;
@@ -19,8 +16,5 @@ public class Product {
         this.name = name;
         this.price = price;
     }
-
-
-
 
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
-<%@page isELIgnored="false" %>
+	pageEncoding="UTF-8"%>
+	<%@page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -14,15 +14,15 @@
 
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: tomato">
+			style="background-color: teal">
 			<div>
 				<a href="<%=request.getContextPath()%>/" class="navbar-brand"> Product
 					Management App </a>
 			</div>
 
 			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/orders"
-					class="nav-link">Orders</a></li>
+				<li><a href="<%=request.getContextPath()%>/products"
+					class="nav-link">Products</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -32,37 +32,40 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center">List of Products</h3>
+			<h3 class="text-center">List of Orders</h3>
 			<hr>
 			<div class="container text-left">
 
-				<a href="<%=request.getContextPath()%>/products/new-product" class="btn btn-success">Add
-					New Product</a>
+				<a href="<%=request.getContextPath()%>/orders/new-order" class="btn btn-success">Add
+					New Order</a>
 			</div>
 			<br>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Name</th>
-						<th>Price</th>
-					<th>Actions</th>
+						<th>Customer Name</th>
+						<th>Product Name</th>
+						<th>Transaction</th>
+						<th>Address</th>
+
+
 
 					</tr>
 				</thead>
 				<tbody>
 
-					<c:forEach var="product" items="${listProducts}">
+					<c:forEach var="order" items="${listOrders}">
 
 						<tr>
-							<td><c:out value="${product.id}" /></td>
-							<td><c:out value="${product.getName()}" /></td>
-							<td><c:out value="${product.price}" /></td>
+							<td><c:out value="${order.id}" /></td>
+							<td><c:out value="${order.customer_name}" /></td>
+							<td><c:out value="${order.product}" /></td>
+							<td><c:out value="${order.transaction}" /></td>
+							<td><c:out value="${order.address}" /></td>
 
-							<td><a href="products/update-product?id=<c:out value='${product.id}' />">Edit</a>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								 <button type="button" class="btn btn-danger delete-button" data-product-id="<c:out value='${product.id}' />">Delete</button>
-								</td>
+
+
 						</tr>
 					</c:forEach>
 					<!-- } -->
@@ -71,9 +74,5 @@
 			</table>
 		</div>
 	</div>
-	<script>
-        var contextPath = '<%=request.getContextPath()%>';
-    </script>
-<script src="./static/js/delete.js"></script>
 </body>
 </html>

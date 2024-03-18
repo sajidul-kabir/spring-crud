@@ -19,7 +19,15 @@ public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] { "/products/*","/orders/*" };
+        return new String[] {
+                "/products",
+                "/products/new-product",
+                "/products/update-product",
+
+                "/orders",
+                "/orders/new-order"
+
+        };
     }
 }
 

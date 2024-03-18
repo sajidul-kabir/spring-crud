@@ -1,0 +1,28 @@
+.rootDiv{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .card {
+            width: 200px;
+            height: 150px;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 10px;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            background-image: linear-gradient(to right top, #ff6347, #ff7f50);
+            /* for "Products" card */
+        }
+        .card:nth-child(2) {
+            background-image: linear-gradient(to right top, #008080, #008b8b);
+            /* for "Orders" card */
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .card a {
+            text-decoration: none;
+            color: #fff; /* text color changed to white for better visibility */
+        }
